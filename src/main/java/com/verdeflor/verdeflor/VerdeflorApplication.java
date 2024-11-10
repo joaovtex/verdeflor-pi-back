@@ -1,6 +1,7 @@
 package com.verdeflor.verdeflor;
 
 import com.verdeflor.verdeflor.repositories.FuncionarioRepository;
+import com.verdeflor.verdeflor.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

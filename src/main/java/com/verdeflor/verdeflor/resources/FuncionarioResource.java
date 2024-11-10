@@ -11,6 +11,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.List;
 
+@CrossOrigin(origins="*", maxAge = 3600)
 @RestController
 @RequestMapping(value = "funcionarios")
 
@@ -27,6 +28,12 @@ public class FuncionarioResource {
     public List<Funcionario> findAll() {
         List<Funcionario> funcionarios = funcionarioService.findAll();
         return funcionarios;
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Funcionario> findById(@PathVariable Integer id) {
+        Funcionario funcionario = funcionarioService.findById(id);
+        return ResponseEntity.ok().body(funcionario);
     }
 
     @PostMapping
