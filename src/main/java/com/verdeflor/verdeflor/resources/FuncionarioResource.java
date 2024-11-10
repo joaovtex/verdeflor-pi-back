@@ -36,6 +36,12 @@ public class FuncionarioResource {
         return ResponseEntity.ok().body(funcionario);
     }
 
+    @GetMapping(value = "/nome/{nome}")
+    public ResponseEntity<List<Funcionario>> findByNome(@PathVariable String nome) {
+        List<Funcionario> funcionarios = funcionarioService.findByNome(nome);
+        return ResponseEntity.ok().body(funcionarios);
+    }
+
     @PostMapping
     public ResponseEntity<Funcionario> gravarFuncionario (@RequestBody Funcionario funcionario) {
         funcionario = funcionarioService.gravarFuncionario(funcionario);

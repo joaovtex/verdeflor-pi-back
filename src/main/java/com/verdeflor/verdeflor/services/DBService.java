@@ -27,7 +27,7 @@ public class DBService {
     @Bean
     public void instanciarDB() throws ParseException {
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        Funcionario funcionario = new Funcionario("João", "111.111.111.11", 2000, new Date());
+        Funcionario funcionario = new Funcionario("João Victor", "487.916.708-88", 2000, new Date());
         User user = new User("admin@gmail.com", "@admin123");
         funcionarioRepository.saveAll(Arrays.asList(funcionario));
         userRepository.saveAll(Arrays.asList(user));

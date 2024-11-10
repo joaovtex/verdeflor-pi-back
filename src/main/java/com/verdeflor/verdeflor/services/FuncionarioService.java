@@ -23,6 +23,10 @@ public class FuncionarioService {
         return funcionarios;
     }
 
+    public List<Funcionario> findByNome(String nome) {
+        return funcionarioRepository.findByNomeContainingIgnoreCase(nome);
+    }
+
     public Funcionario gravarFuncionario(Funcionario funcionario) {
         return funcionarioRepository.save(funcionario);
     }
