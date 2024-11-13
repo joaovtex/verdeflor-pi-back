@@ -14,9 +14,9 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public User findById(Integer id) {
-        Optional<User> user = userRepository.findById(id);
-        return user.orElse(null);
+    public boolean authenticate(String email, String senha) {
+        Optional<User> user = userRepository.findByEmail(email);
+        return user.isPresent() && user.get().getSenha().equals(senha);
     }
 
 }
