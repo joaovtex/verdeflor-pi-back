@@ -32,9 +32,9 @@ public class DBService {
         Date dataRaissa = formato.parse("03/11/2022");
         Date dataMaria = formato.parse("01/12/2021");
 
-        Funcionario funcionario = new Funcionario("João Victor Farias", "487.916.708-88", 1823, dataJoao);
-        Funcionario funcionario2 = new Funcionario("Raissa Casilla", "455.152.870-61", 1954, dataRaissa);
-        Funcionario funcionario3 = new Funcionario("Maria Mercedes Rodrigues", "547.860.370-87", 2043, dataMaria);
+        Funcionario funcionario = new Funcionario("João Victor Farias", "487.916.708-88", 1823, dataJoao, true);
+        Funcionario funcionario2 = new Funcionario("Raissa Casilla", "455.152.870-61", 1954, dataRaissa, true);
+        Funcionario funcionario3 = new Funcionario("Maria Mercedes Rodrigues", "547.860.370-87", 2043, dataMaria, false);
 
         User user = new User("admin@gmail.com", "@admin123");
 

@@ -27,6 +27,14 @@ public class FuncionarioService {
         return funcionarioRepository.findByNomeContainingIgnoreCase(nome);
     }
 
+    public List<Funcionario> findAtivos() {
+        return funcionarioRepository.findAllAtivos();
+    }
+
+    public List<Funcionario> findInativos() {
+        return funcionarioRepository.findAllInativos();
+    }
+
     public Funcionario gravarFuncionario(Funcionario funcionario) {
         return funcionarioRepository.save(funcionario);
     }
@@ -41,6 +49,7 @@ public class FuncionarioService {
             alterado.setNome(funcionario.getNome());
             alterado.setCpf(funcionario.getCpf());
             alterado.setDtAdmissao(funcionario.getDtAdmissao());
+            alterado.setEstaAtivo(funcionario.getEstaAtivo());
         }
         return funcionarioRepository.save(funcionario);
     }

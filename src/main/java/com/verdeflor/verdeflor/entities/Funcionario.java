@@ -26,14 +26,18 @@ public class Funcionario implements Serializable {
     @Temporal(TemporalType.DATE)
     Date dtAdmissao;
 
+    @Column (name = "estaAtivo")
+    boolean estaAtivo;
+
     public Funcionario() {}
 
-    public Funcionario(String nome, String cpf, double salario, Date dtAdmissao) {
+    public Funcionario(String nome, String cpf, double salario, Date dtAdmissao, boolean estaAtivo) {
         super();
         this.nome = nome;
         this.cpf = cpf;
         this.salario = salario;
         this.dtAdmissao = dtAdmissao;
+        this.estaAtivo = estaAtivo;
     }
 
     public int getId() {
@@ -74,6 +78,14 @@ public class Funcionario implements Serializable {
 
     public void setDtAdmissao(Date dtAdmissao) {
         this.dtAdmissao = dtAdmissao;
+    }
+
+    public boolean getEstaAtivo() {
+        return estaAtivo;
+    }
+
+    public void setEstaAtivo(boolean estaAtivo) {
+        this.estaAtivo = estaAtivo;
     }
 
     @Override

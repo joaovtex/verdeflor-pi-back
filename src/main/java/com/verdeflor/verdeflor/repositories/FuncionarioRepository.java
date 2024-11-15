@@ -13,4 +13,10 @@ public interface FuncionarioRepository extends JpaRepository<Funcionario, Intege
 
     @Query("SELECT f FROM funcionarios f WHERE LOWER(f.nome) LIKE LOWER(CONCAT('%', :nome, '%'))")
     List<Funcionario> findByNomeContainingIgnoreCase(@Param("nome") String nome);
+
+    @Query("SELECT f FROM funcionarios f WHERE f.estaAtivo = true")
+    List<Funcionario> findAllAtivos();
+
+    @Query("SELECT f FROM funcionarios f WHERE f.estaAtivo = false")
+    List<Funcionario> findAllInativos();
 }

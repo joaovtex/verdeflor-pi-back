@@ -42,6 +42,18 @@ public class FuncionarioResource {
         return ResponseEntity.ok().body(funcionarios);
     }
 
+    @GetMapping(value = "/ativos")
+    public ResponseEntity<List<Funcionario>> findAtivos() {
+        List<Funcionario> ativos = funcionarioService.findAtivos();
+        return ResponseEntity.ok().body(ativos);
+    }
+
+    @GetMapping(value = "/inativos")
+    public ResponseEntity<List<Funcionario>> findInativos() {
+        List<Funcionario> inativos = funcionarioService.findInativos();
+        return ResponseEntity.ok().body(inativos);
+    }
+
     @PostMapping
     public ResponseEntity<Funcionario> gravarFuncionario (@RequestBody Funcionario funcionario) {
         funcionario = funcionarioService.gravarFuncionario(funcionario);
